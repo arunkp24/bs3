@@ -1,12 +1,12 @@
 import { html, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { Router } from '@vaadin/router';
 import { BaseElement } from '../state/BaseElement';
 import { fetchAllTickets, fetchUserTickets } from '../state/ticketsSlice';
 import { getAllTicketsSelector } from '../state/ticketsSelector';
 import { Ticket } from '../models/Ticket';
 import { dashboardStyles } from './Dashboard.style';
 import { getUserSelector } from '../state/userSelector';
-import { Router } from '@vaadin/router';
 import '../components/TicketList'
 
 @customElement('bs3-dashboard')

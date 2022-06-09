@@ -1,10 +1,10 @@
 import { html, CSSResultGroup } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
+import { Router } from '@vaadin/router';
 import { User } from '../models/User';
 import { loginUser } from '../state/userSlice';
 import { getUserSelector } from '../state/userSelector';
 import { BaseElement } from '../state/BaseElement';
-import { Router } from '@vaadin/router';
 import { loginStyles } from './Login.style';
 
 @customElement('bs3-login')
@@ -13,7 +13,9 @@ export class Bs3Login extends BaseElement {
     static styles?: CSSResultGroup = loginStyles;
 
     @query('#username') private username: HTMLInputElement | undefined;
+
     @query('#password') private password: HTMLInputElement | undefined;
+
     @query('#user_type') private userType: HTMLSelectElement | undefined;
 
     @property()

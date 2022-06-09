@@ -15,7 +15,9 @@ export class Bs3TicketForm extends BaseElement {
     static styles?: CSSResultGroup = ticketFormStyles;
 
     @query('#short_desc') private short_desc: HTMLInputElement | undefined;
+
     @query('#desc') private desc: HTMLInputElement | undefined;
+
     @query('#status') private status: HTMLSelectElement | undefined;
 
     @property()

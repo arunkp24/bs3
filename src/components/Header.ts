@@ -1,11 +1,11 @@
 import { html, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { Router } from '@vaadin/router';
 import { headerStyles } from './Header.style';
 import { getUserNameSelector } from '../state/userSelector';
 import { BaseElement } from '../state/BaseElement';
 import { resetTickets } from '../state/ticketsSlice';
 import { resetUser } from '../state/userSlice';
-import { Router } from '@vaadin/router';
 
 @customElement('bs3-header')
 export class Bs3Header extends BaseElement {

@@ -22,7 +22,7 @@ export class AuthGuard implements PageEnabled {
     const isAuthenticated = await this.authService.isAuthorized();
 
     if(!isAuthenticated) {
-      return commands.redirect(pathRedirect? pathRedirect: '/');
+      return commands.redirect(pathRedirect || '/');
     }
 
     return undefined;
@@ -32,7 +32,7 @@ export class AuthGuard implements PageEnabled {
     const isAuthenticated = await this.authService.isAuthorized();
 
     if (isAuthenticated) {
-      return commands.redirect(pathRedirect ? pathRedirect : '/');
+      return commands.redirect(pathRedirect || '/');
     }
 
     return undefined;

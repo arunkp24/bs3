@@ -66,9 +66,7 @@ const ticketsSlice = createSlice({
         }),
         builder.addCase(fetchTicket.rejected, (state, action) => {}),
         builder.addCase(createTicket.pending, (state, action) => {}),
-        builder.addCase(createTicket.fulfilled, (state, action) => {
-            return [ ...state, ...action.payload ];
-        }),
+        builder.addCase(createTicket.fulfilled, (state, action) => [ ...state, ...action.payload ]),
         builder.addCase(createTicket.rejected, (state, action) => {}),
         builder.addCase(updateTicket.pending, (state, action) => {}),
         builder.addCase(updateTicket.fulfilled, (state, action) => {
