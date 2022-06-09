@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit'
-import { IStore } from '../models/Bs3Store';
+import { IStore } from '../models/Store';
 
 const selectUser = (state: IStore) => state.user;
 

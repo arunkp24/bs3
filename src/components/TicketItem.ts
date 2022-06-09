@@ -1,7 +1,7 @@
 import { Router } from '@vaadin/router';
 import { html, CSSResultGroup, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { Ticket } from '../models/Bs3Ticket';
+import { Ticket } from '../models/Ticket';
 import { ticketItemStyles } from './TicketItem.style';
 
 @customElement('bs3-ticket-item')

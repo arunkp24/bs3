@@ -1,6 +1,6 @@
 import { html, CSSResultGroup, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { Ticket } from '../models/Bs3Ticket';
+import { Ticket } from '../models/Ticket';
 import { ticketListStyles } from './TicketList.style';
 import './TicketItem';
 

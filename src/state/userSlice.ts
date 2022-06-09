@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { User } from '../models/Bs3User';
+import { User } from '../models/User';
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
     const response = await fetch('http://localhost:3000/users');

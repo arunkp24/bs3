@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { Ticket } from '../models/Bs3Ticket';
+import { Ticket } from '../models/Ticket';
 
 export const fetchAllTickets = createAsyncThunk('tickets/fetchAllTickets', async () => {
     const response = await fetch('http://localhost:3000/tickets');

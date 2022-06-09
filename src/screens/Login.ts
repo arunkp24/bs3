@@ -1,6 +1,6 @@
 import { html, CSSResultGroup } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
-import { User } from '../models/Bs3User';
+import { User } from '../models/User';
 import { loginUser } from '../state/userSlice';
 import { getUserSelector } from '../state/userSelector';
 import { BaseElement } from '../state/BaseElement';

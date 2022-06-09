@@ -1,4 +1,4 @@
-import { User } from "./Bs3User";
+import { User } from "./User";
 
 export interface Ticket {
     id?: number;

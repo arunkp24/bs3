@@ -8,7 +8,7 @@ router.setRoutes([
         path: '/',
         action: async (context: Context, commands: Commands) => {
             await import('./components/Header');
-            await import('./components/Home');
+            await import('./screens/Home');
             return await new AuthGuard().redirectTo(commands, '/dashboard');
         },
         component: 'bs3-home'
@@ -20,14 +20,14 @@ router.setRoutes([
     {
         path: '/login', 
         action: async () => {
-            await import('./components/Login');
+            await import('./screens/Login');
         },
         component: 'bs3-login'
     },
     {
         path: '/dashboard', 
         action: async (context: Context, commands: Commands) => {
-            await import('./components/Dashboard');
+            await import('./screens/Dashboard');
             return await new AuthGuard().pageEnabled(context, commands, '/');
         },
         component: 'bs3-dashboard'
