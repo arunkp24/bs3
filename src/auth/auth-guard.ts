@@ -28,23 +28,4 @@ export class AuthGuard implements PageEnabled {
     return undefined;
   }
 
-  public async pageEnabledAdmin(context: Context, commands: Commands, pathRedirect?: string): Promise<RedirectResult | undefined> {
-    const isAdmin = await this.authService.isAdmin();
-
-    if(!isAdmin) {
-      return commands.redirect(pathRedirect? pathRedirect: '/');
-    }
-
-    return undefined;
-  }
-
-  public async pageEnabledConsumer(context: Context, commands: Commands, pathRedirect?: string): Promise<RedirectResult | undefined> {
-    const isConsumer = await this.authService.isConsumer();
-
-    if(!isConsumer) {
-      return commands.redirect(pathRedirect? pathRedirect: '/');
-    }
-
-    return undefined;
-  }
 }

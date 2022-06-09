@@ -7,7 +7,7 @@ import { User } from '../models/Bs3User';
 import { getAllTicketsSelector } from '../state/ticketsSelector';
 import { createTicket, updateTicket } from '../state/ticketsSlice';
 import { getUserSelector } from '../state/userSelector';
-import { ticketFormStyles } from './Bs3TicketForm.style';
+import { ticketFormStyles } from './TicketForm.style';
 
 @customElement('bs3-ticket-form')
 export class Bs3TicketForm extends Bs3Base {

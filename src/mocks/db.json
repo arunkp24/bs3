@@ -74,9 +74,9 @@
   "tickets": [
     {
       "id": 1,
-      "short_description": "Excision vaginal lesion",
+      "short_description": "Excision vaginal lesion edited",
       "description": "Excision or destruction of lesion of vagina",
-      "status": "resolved",
+      "status": "active",
       "created_at": "12/8/2021",
       "userId": 2,
       "user": {
@@ -249,6 +249,54 @@
         "type": "consumer"
       },
       "resolved_by": null
+    },
+    {
+      "short_description": "Test",
+      "description": "test",
+      "status": "resolved",
+      "created_at": "9/06/2022",
+      "userId": 1,
+      "user": {
+        "id": 1,
+        "name": "Amberly Tunnicliffe",
+        "username": "admin",
+        "email": "atunnicliffe0@twitpic.com",
+        "type": "admin"
+      },
+      "resolved_by": null,
+      "id": 11
+    },
+    {
+      "short_description": "Plan B",
+      "description": "Plan A",
+      "status": "open",
+      "created_at": "9/06/2022",
+      "userId": 2,
+      "user": {
+        "id": 2,
+        "name": "Sharline Peirce",
+        "username": "consumer",
+        "email": "speirce1@scribd.com",
+        "type": "consumer"
+      },
+      "resolved_by": null,
+      "id": 12
+    },
+    {
+      "short_description": "new ticket",
+      "description": "sdjfl;sadjfl;asjf",
+      "status": "open",
+      "created_at": "9/06/2022",
+      "userId": 2,
+      "user": {
+        "id": 2,
+        "name": "Sharline Peirce",
+        "username": "consumer",
+        "email": "speirce1@scribd.com",
+        "type": "consumer"
+      },
+      "resolved_by": null,
+      "id": 13
     }
   ]
 }

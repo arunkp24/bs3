@@ -1,6 +1,6 @@
 import { LitElement, html, CSSResultGroup } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { homeStyles } from './Bs3Home.style';
+import { homeStyles } from './Home.style';
 
 @customElement('bs3-home')
 export class Bs3Home extends LitElement {

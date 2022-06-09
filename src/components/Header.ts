@@ -1,6 +1,6 @@
 import { html, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { headerStyles } from './Bs3Header.style';
+import { headerStyles } from './Header.style';
 import { getUserNameSelector } from '../state/userSelector';
 import { Bs3Base } from '../Bs3Base';
 import { resetTickets } from '../state/ticketsSlice';

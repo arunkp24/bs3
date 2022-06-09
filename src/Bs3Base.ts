@@ -1,4 +1,4 @@
-import { LitElement, html, css, CSSResultGroup } from 'lit';
+import { LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import store from './state/store';
 import { Store } from '@reduxjs/toolkit';

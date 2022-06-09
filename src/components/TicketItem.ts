@@ -3,7 +3,7 @@ import { html, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { Bs3Base } from '../Bs3Base';
 import { Ticket } from '../models/Bs3Ticket';
-import { ticketItemStyles } from './Bs3TicketItem.style';
+import { ticketItemStyles } from './TicketItem.style';
 
 @customElement('bs3-ticket-item')
 export class Bs3TicketItem extends Bs3Base {

@@ -1,11 +1,11 @@
 import { Commands, Context, Router } from '@vaadin/router';
-import './components/Bs3Dashboard';
-import './components/Bs3Header';
-import './components/Bs3Home';
-import './components/Bs3Login';
-import './components/Bs3TicketForm';
-import './components/Bs3TicketItem';
-import './components/Bs3TicketList';
+import './components/Dashboard';
+import './components/Header';
+import './components/Home';
+import './components/Login';
+import './components/TicketForm';
+import './components/TicketItem';
+import './components/TicketList';
 import { AuthGuard } from './auth/auth-guard';
 
 const outlet = document.querySelector('#outlet');

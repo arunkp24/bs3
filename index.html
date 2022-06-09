@@ -23,11 +23,9 @@
   <bs3-header></bs3-header>
   <div id="outlet"></div>
   <script>
-    // HACK(keanulee): The Redux package assumes `process` exists - mock it here before
-    // the module is loaded.
     window.process = {
       env: {
-        NODE_ENV: 'production'
+        NODE_ENV: 'dev'
       }
     };
   </script>

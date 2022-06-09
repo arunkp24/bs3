@@ -1,10 +1,10 @@
 import { html, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { Bs3Base } from '../Bs3Base';
-import { fetchAllTickets, fetchUserTickets } from './../state/ticketsSlice';
-import { getAllTicketsSelector } from './../state/ticketsSelector';
+import { fetchAllTickets, fetchUserTickets } from '../state/ticketsSlice';
+import { getAllTicketsSelector } from '../state/ticketsSelector';
 import { Ticket } from '../models/Bs3Ticket';
-import { dashboardStyles } from './Bs3Dashboard.style';
+import { dashboardStyles } from './Dashboard.style';
 import { getUserSelector } from '../state/userSelector';
 import { Router } from '@vaadin/router';
 

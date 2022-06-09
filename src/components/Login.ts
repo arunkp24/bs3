@@ -5,7 +5,7 @@ import { loginUser } from '../state/userSlice';
 import { getUserSelector } from '../state/userSelector';
 import { Bs3Base } from '../Bs3Base';
 import { Router } from '@vaadin/router';
-import { loginStyles } from './Bs3Login.style';
+import { loginStyles } from './Login.style';
 
 @customElement('bs3-login')
 export class Bs3Login extends Bs3Base {
