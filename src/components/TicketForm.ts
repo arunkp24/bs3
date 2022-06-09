@@ -1,7 +1,7 @@
 import { Router } from '@vaadin/router';
 import { html, CSSResultGroup } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
-import { Bs3Base } from '../Bs3Base';
+import { BaseElement } from '../state/BaseElement';
 import { Ticket } from '../models/Bs3Ticket';
 import { User } from '../models/Bs3User';
 import { getAllTicketsSelector } from '../state/ticketsSelector';
@@ -10,7 +10,7 @@ import { getUserSelector } from '../state/userSelector';
 import { ticketFormStyles } from './TicketForm.style';
 
 @customElement('bs3-ticket-form')
-export class Bs3TicketForm extends Bs3Base {
+export class Bs3TicketForm extends BaseElement {
 
     static styles?: CSSResultGroup = ticketFormStyles;
 

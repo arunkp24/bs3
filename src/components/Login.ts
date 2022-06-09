@@ -3,12 +3,12 @@ import { customElement, property, query } from 'lit/decorators.js';
 import { User } from '../models/Bs3User';
 import { loginUser } from '../state/userSlice';
 import { getUserSelector } from '../state/userSelector';
-import { Bs3Base } from '../Bs3Base';
+import { BaseElement } from '../state/BaseElement';
 import { Router } from '@vaadin/router';
 import { loginStyles } from './Login.style';
 
 @customElement('bs3-login')
-export class Bs3Login extends Bs3Base {
+export class Bs3Login extends BaseElement {
 
     static styles?: CSSResultGroup = loginStyles;
 

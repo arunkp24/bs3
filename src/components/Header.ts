@@ -2,13 +2,13 @@ import { html, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { headerStyles } from './Header.style';
 import { getUserNameSelector } from '../state/userSelector';
-import { Bs3Base } from '../Bs3Base';
+import { BaseElement } from '../state/BaseElement';
 import { resetTickets } from '../state/ticketsSlice';
 import { resetUser } from '../state/userSlice';
 import { Router } from '@vaadin/router';
 
 @customElement('bs3-header')
-export class Bs3Header extends Bs3Base {
+export class Bs3Header extends BaseElement {
 
     static styles?: CSSResultGroup = headerStyles;
 
@@ -38,7 +38,7 @@ export class Bs3Header extends Bs3Base {
         return html`
             <header>
                 <nav class="nav">
-                    <div><a class="title" href="/home">BS3</a></div>
+                    <div><a class="title" href="/">BS3</a></div>
                     <div>Hello ${this.userName ? this.userName : 'Stranger'}!</div>
                     ${loginLogout}
                 </nav>

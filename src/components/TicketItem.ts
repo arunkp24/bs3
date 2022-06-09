@@ -1,12 +1,11 @@
 import { Router } from '@vaadin/router';
-import { html, CSSResultGroup } from 'lit';
+import { html, CSSResultGroup, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { Bs3Base } from '../Bs3Base';
 import { Ticket } from '../models/Bs3Ticket';
 import { ticketItemStyles } from './TicketItem.style';
 
 @customElement('bs3-ticket-item')
-export class Bs3TicketItem extends Bs3Base {
+export class Bs3TicketItem extends LitElement {
 
     static styles?: CSSResultGroup = ticketItemStyles;
 

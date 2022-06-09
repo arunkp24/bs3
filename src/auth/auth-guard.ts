@@ -28,4 +28,14 @@ export class AuthGuard implements PageEnabled {
     return undefined;
   }
 
+  async redirectTo(commands: Commands, pathRedirect?: string): Promise<RedirectResult | undefined> {
+    const isAuthenticated = await this.authService.isAuthorized();
+
+    if (isAuthenticated) {
+      return commands.redirect(pathRedirect ? pathRedirect : '/');
+    }
+
+    return undefined;
+  }
+
 }

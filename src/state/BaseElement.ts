@@ -1,9 +1,9 @@
 import { LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import store from './state/store';
+import store from './store';
 import { Store } from '@reduxjs/toolkit';
 
-export class Bs3Base extends LitElement {
+export class BaseElement extends LitElement {
 
     @property({type: Object})
     store: Store;

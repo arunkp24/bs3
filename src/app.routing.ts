@@ -6,8 +6,10 @@ const router = new Router(outlet);
 router.setRoutes([
     {
         path: '/',
-        action: async () => {
-            await import('./components/Home')
+        action: async (context: Context, commands: Commands) => {
+            await import('./components/Header');
+            await import('./components/Home');
+            return await new AuthGuard().redirectTo(commands, '/dashboard');
         },
         component: 'bs3-home'
     },
@@ -18,19 +20,24 @@ router.setRoutes([
     {
         path: '/login', 
         action: async () => {
-            await import('./components/Login')
+            await import('./components/Login');
         },
         component: 'bs3-login'
     },
     {
         path: '/dashboard', 
-        component: 'bs3-dashboard',
         action: async (context: Context, commands: Commands) => {
+            await import('./components/Dashboard');
             return await new AuthGuard().pageEnabled(context, commands, '/');
-        }
+        },
+        component: 'bs3-dashboard'
     },
     {
         path: '/ticket', 
+        action: async (context: Context, commands: Commands) => {
+            await import('./components/TicketForm');
+            return await new AuthGuard().pageEnabled(context, commands, '/');
+        },
         children: [
             { path: '/', component: 'bs3-ticket-form' },
             { path: '/:id', component: 'bs3-ticket-form' }
