@@ -1,18 +1,14 @@
 import { Commands, Context, Router } from '@vaadin/router';
-import './components/Dashboard';
-import './components/Header';
-import './components/Home';
-import './components/Login';
-import './components/TicketForm';
-import './components/TicketItem';
-import './components/TicketList';
 import { AuthGuard } from './auth/auth-guard';
 
 const outlet = document.querySelector('#outlet');
 const router = new Router(outlet);
 router.setRoutes([
     {
-        path: '/', 
+        path: '/',
+        action: async () => {
+            await import('./components/Home')
+        },
         component: 'bs3-home'
     },
     {
@@ -21,6 +17,9 @@ router.setRoutes([
     },
     {
         path: '/login', 
+        action: async () => {
+            await import('./components/Login')
+        },
         component: 'bs3-login'
     },
     {
