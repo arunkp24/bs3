@@ -1,13 +1,21 @@
-import { html, CSSResultGroup, LitElement } from 'lit';
+import { html, CSSResultGroup, LitElement, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { Ticket } from '../models/Ticket';
-import { ticketListStyles } from './TicketList.style';
 import './TicketItem';
 
 @customElement('bs3-ticket-list')
 export class Bs3TicketList extends LitElement {
 
-    static styles?: CSSResultGroup = ticketListStyles;
+    static styles?: CSSResultGroup = css`
+        .list_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .item {
+            flex-basis: 30%;
+        }
+    `;
 
     @property({type: Array})
     tickets: Ticket[] = [];

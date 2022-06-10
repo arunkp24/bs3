@@ -1,5 +1,5 @@
 import { Router } from '@vaadin/router';
-import { html, CSSResultGroup } from 'lit';
+import { html, CSSResultGroup, css } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import { BaseElement } from '../state/BaseElement';
 import { Ticket } from '../models/Ticket';
@@ -7,12 +7,32 @@ import { User } from '../models/User';
 import { getAllTicketsSelector } from '../state/ticketsSelector';
 import { createTicket, updateTicket } from '../state/ticketsSlice';
 import { getUserSelector } from '../state/userSelector';
-import { ticketFormStyles } from './TicketForm.style';
+import { buttonStyle, formElementStyle, whiteColor } from '../app.styles';
 
 @customElement('bs3-ticket-form')
 export class Bs3TicketForm extends BaseElement {
 
-    static styles?: CSSResultGroup = ticketFormStyles;
+    static styles?: CSSResultGroup = [
+        buttonStyle,
+        formElementStyle, 
+        css`
+        .login_wrapper {
+            margin: 3rem auto;
+            background: ${whiteColor};
+            padding: 3rem;
+            width: 25%;
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+        }
+        input, select, textarea {
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+    `];
 
     @query('#short_desc') private short_desc: HTMLInputElement | undefined;
 
@@ -88,9 +108,9 @@ export class Bs3TicketForm extends BaseElement {
     render() {
         let btn;
         if (Object.keys(this.ticket).length > 0) {
-            btn = html`<button @click="${this._updateTicket}">Update</button>`
+            btn = html`<button class="btn" @click="${this._updateTicket}">Update</button>`
         } else {
-            btn = html`<button @click="${this._createTicket}">Submit</button>`
+            btn = html`<button class="btn" @click="${this._createTicket}">Submit</button>`
         }
         return html`
         <div class="login_wrapper">

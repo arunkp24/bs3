@@ -1,18 +1,30 @@
-import { html, CSSResultGroup } from 'lit';
+import { html, CSSResultGroup, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
 import { BaseElement } from '../state/BaseElement';
 import { fetchAllTickets, fetchUserTickets } from '../state/ticketsSlice';
 import { getAllTicketsSelector } from '../state/ticketsSelector';
 import { Ticket } from '../models/Ticket';
-import { dashboardStyles } from './Dashboard.style';
 import { getUserSelector } from '../state/userSelector';
 import '../components/TicketList'
+import { buttonStyle } from '../app.styles';
 
 @customElement('bs3-dashboard')
 export class Bs3Dashboard extends BaseElement {
 
-    static styles?: CSSResultGroup = dashboardStyles;
+    static styles?: CSSResultGroup = [
+        buttonStyle,
+        css`
+            .dashboard_wrapper {
+                margin: 1rem 5rem;
+            }
+            .dashboard_header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        `
+    ];
 
     @property()
     tickets: Ticket[] = [];

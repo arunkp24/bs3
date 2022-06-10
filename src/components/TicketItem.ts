@@ -1,13 +1,45 @@
 import { Router } from '@vaadin/router';
-import { html, CSSResultGroup, LitElement } from 'lit';
+import { html, CSSResultGroup, LitElement, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { borderColor, greenColor, orangeColor, redColor, whiteColor } from '../app.styles';
 import { Ticket } from '../models/Ticket';
-import { ticketItemStyles } from './TicketItem.style';
 
 @customElement('bs3-ticket-item')
 export class Bs3TicketItem extends LitElement {
 
-    static styles?: CSSResultGroup = ticketItemStyles;
+    static styles?: CSSResultGroup = css`
+        .card {
+            background: ${whiteColor};
+            cursor: pointer;
+        }
+        .card_body {
+            padding: 2rem;
+        }
+        .card_footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            border-top: 1px solid ${borderColor};
+        }
+        .status {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 1rem;
+        }
+        .red {
+            background-color: ${redColor};
+        }
+        .orange {
+            background-color: ${orangeColor};
+        }
+        .green {
+            background-color: ${greenColor};
+        }
+        .owner {
+            font-size: 12px;
+            font-style: italic;
+        }
+    `;
 
     @property()
     ticket: Ticket = {}

@@ -1,5 +1,6 @@
 import { Commands, Context, Router } from '@vaadin/router';
 import { AuthGuard } from './auth/auth-guard';
+import('./components/Header');
 
 const outlet = document.querySelector('#outlet');
 const router = new Router(outlet);
@@ -7,7 +8,6 @@ router.setRoutes([
     {
         path: '/',
         action: async (context: Context, commands: Commands) => {
-            await import('./components/Header');
             await import('./screens/Home');
             return await new AuthGuard().redirectTo(commands, '/dashboard');
         },

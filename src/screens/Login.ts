@@ -1,16 +1,38 @@
-import { html, CSSResultGroup } from 'lit';
+import { html, CSSResultGroup, css } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
 import { User } from '../models/User';
 import { loginUser } from '../state/userSlice';
 import { getUserSelector } from '../state/userSelector';
 import { BaseElement } from '../state/BaseElement';
-import { loginStyles } from './Login.style';
+import { buttonStyle, whiteColor } from '../app.styles';
 
 @customElement('bs3-login')
 export class Bs3Login extends BaseElement {
 
-    static styles?: CSSResultGroup = loginStyles;
+    static styles?: CSSResultGroup = [
+        buttonStyle,
+        css`
+            .login_wrapper {
+                margin: 3rem auto;
+                background: ${whiteColor};
+                padding: 3rem;
+                width: 25%;
+                display: flex;
+                gap: 1rem;
+                flex-direction: column;
+            }
+            select, input, button {
+                width: 100%;
+            }
+            input, select {
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+        `];
 
     @query('#username') private username: HTMLInputElement | undefined;
 
@@ -41,7 +63,7 @@ export class Bs3Login extends BaseElement {
                 username: this.username?.value,
                 userType: this.userType?.value
             };
-            this.dispatchAction(loginUser(payload));    
+            this.dispatchAction(loginUser(payload));
         }
     }
 
@@ -72,7 +94,7 @@ export class Bs3Login extends BaseElement {
                     <input id="password" type="password" placeholder="Password" name="password">
                 </div>
                 <div>
-                    <button @click="${this._submit}">Submit</button>
+                    <button class="btn" @click="${this._submit}">Submit</button>
                 </div>
             </div>
         `;
