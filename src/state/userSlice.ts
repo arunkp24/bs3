@@ -6,7 +6,7 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
     return response.json();
 });
 
-export const loginUser = createAsyncThunk('users/login', async ({ username, userType}: any, dispatch) => {
+export const loginUser = createAsyncThunk('users/login', async ({ username, userType}: any) => {
     const response = await fetch(`http://localhost:3000/users?username=${username}&type=${userType}`);
     return response.json();
 });

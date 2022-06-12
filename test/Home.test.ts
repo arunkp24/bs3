@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import '../src/screens/Home.ts';
+import '../src/screens/Home';
 
 describe('<bs3-home>', () => {
   let element: LitElement;
